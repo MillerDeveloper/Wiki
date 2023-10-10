@@ -1,0 +1,14 @@
+<app-site-header></app-site-header>
+
+<div class="auth">
+    <div class="auth-form">
+        <h5 class="auth-title">
+            Сторінка {{ router.url.indexOf('login') !== -1 ? 'логіну' : 'реєстрації' }}
+        </h5>
+        <p-divider></p-divider>
+
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<p-toast></p-toast>

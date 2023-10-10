@@ -1,0 +1,546 @@
+<app-site-header [isMainPage]="true"></app-site-header>
+
+<section class="site-section services" id="services">
+    <div class="container">
+        <h3 class="section-header">Виберете необхідні послуги</h3>
+        <p class="section-subheader">Ми зібрали всі необхідні послуги в одному місці</p>
+        <span class="site-divider"></span>
+
+        <div class="services-wrapper">
+            <p-card
+                header="Гуманітарна допомога"
+                subheader="Отримайте мапу гуманітарних допомог по всій країні й за кордоном"
+                styleClass="p-card-shadow services-card"
+            >
+                <ng-template pTemplate="header">
+                    <img
+                        alt="Card"
+                        src="assets/images/services/gumhelp.jpeg"
+                        class="services-card__images"
+                    />
+                </ng-template>
+                <p class="services-card__description">
+                    Внутрішньо переміщені особи можуть отримати гуманітарну допомогу. Щоб її
+                    отримати, потрібно звернутися до районних управлінь соціального захисту
+                    населення. Після цього отримати допомогу можна у територіальних центрах
+                    обслуговування громадян
+                </p>
+                <ng-template pTemplate="footer">
+                    <p-button
+                        label="Докладніше"
+                        icon="pi pi-search"
+                        (onClick)="openedDialogs.humanitarianAid = true"
+                    ></p-button>
+                </ng-template>
+            </p-card>
+
+            <p-card
+                header="Житло"
+                subheader="На цьому сайті Ви зможете знайти житло від не байдужих людей"
+                styleClass="p-card-shadow services-card"
+            >
+                <ng-template pTemplate="header">
+                    <img
+                        alt="Card"
+                        src="assets/images/services/prihistok.png"
+                        class="services-card__images"
+                    />
+                </ng-template>
+                <p class="services-card__description">
+                    Проект "Прихисток" працює виключно на волонтерських засадах Пошук житла в
+                    Україні та в странах Евпори. Тут Ви зможете підібрати собі житло, в тому місті
+                    де Ви знаходетесь, та забронювати його на дату поїздки
+                </p>
+                <ng-template pTemplate="footer">
+                    <p-button
+                        label="Докладніше"
+                        icon="pi pi-search"
+                        (onClick)="openedDialogs.helpWithHouse = true"
+                    ></p-button>
+                    <a href="https://prykhystok.gov.ua/find" target="_blank">
+                        <p-button
+                            label="На сайт"
+                            icon="pi pi-arrow-up-right"
+                            styleClass="p-button-secondary"
+                            [style]="{ 'margin-left': '.5em' }"
+                        ></p-button>
+                    </a>
+                </ng-template>
+            </p-card>
+
+            <p-card
+                header="ВПО"
+                subheader="Отримайте грошову допомогу від держави заповнивши форму на сайті"
+                styleClass="p-card-shadow services-card"
+            >
+                <ng-template pTemplate="header">
+                    <img
+                        alt="Card"
+                        src="assets/images/services/vpo.jpeg"
+                        class="services-card__images"
+                    />
+                </ng-template>
+                <p class="services-card__description">
+                    Выплату зможуть отримати громадяни, переміщені з території, де ведуться активні
+                    бойові дії (відповідно до переліку громад у районах бойових дій, на СОТ та тих,
+                    хто перебуває в оточенні); ВПО, житло яких було зруйновано чи пошкоджено.
+                </p>
+                <ng-template pTemplate="footer">
+                    <p-button
+                        label="Докладніше"
+                        icon="pi pi-search"
+                        (onClick)="openedDialogs.helpWithMoney = true"
+                    ></p-button>
+                    <a href="https://groshi.edopomoga.gov.ua/#status" target="_blank">
+                        <p-button
+                            label="На сайт"
+                            icon="pi pi-arrow-up-right"
+                            styleClass="p-button-secondary"
+                            [style]="{ 'margin-left': '.5em' }"
+                        ></p-button>
+                    </a>
+                </ng-template>
+            </p-card>
+
+            <p-card
+                header="Медична допомога"
+                subheader="Якщо Вам портібна медична допомога звертайтесь до цього сайту"
+                styleClass="p-card-shadow services-card"
+            >
+                <ng-template pTemplate="header">
+                    <img
+                        alt="Card"
+                        src="assets/images/services/helsi.png"
+                        class="services-card__images"
+                    />
+                </ng-template>
+                <p class="services-card__description">
+                    Helsi — медична інформаційна система для закладів охорони здоров'я та медичний
+                    портал для пацієнтів в Україні. Медична інформаційна система автоматизує роботу
+                    закладу охорони здоров‘я, лікаря, лабораторії, стаціонару, ведення електронних
+                    медичних карток.
+                </p>
+                <ng-template pTemplate="footer">
+                    <a href="https://helsi.me/doctors/city" target="_blank">
+                        <p-button label="На сайт" icon="pi pi-arrow-up-right"></p-button>
+                    </a>
+                </ng-template>
+            </p-card>
+
+            <p-card
+                header="Психологічна допомога"
+                subheader="На цьому сайті Ви знайдете номери телефонів психологічної допомоги"
+                styleClass="p-card-shadow services-card"
+            >
+                <ng-template pTemplate="header">
+                    <img
+                        alt="Card"
+                        src="assets/images/services/psyhelp.jpeg"
+                        class="services-card__images"
+                    />
+                </ng-template>
+                <p class="services-card__description">
+                    Lifeline Ukraine – це національна, професійна лінія з питань профілактики
+                    підтримки психічного здоров’я. Гаряча лінія працює 24/7, 7 днів на тиждень.
+                    гаряча лінія обслуговує всіх жителів України будь-якою мовою, яку вони обрали.
+                </p>
+                <ng-template pTemplate="footer">
+                    <p-button
+                        label="Докладніше"
+                        icon="pi pi-search"
+                        (onClick)="openedDialogs.psychologicalHelp = true"
+                    ></p-button>
+                    <a href="" target="_blank">
+                        <p-button
+                            label="На сайт"
+                            icon="pi pi-arrow-up-right"
+                            styleClass="p-button-secondary"
+                            [style]="{ 'margin-left': '.5em' }"
+                        ></p-button>
+                    </a>
+                </ng-template>
+            </p-card>
+
+            <p-card
+                header="Транспорт в Україні"
+                subheader="Онлайн мапа яка допомагає прокласти маршрут з урахуванням транспорту"
+                styleClass="p-card-shadow services-card"
+            >
+                <ng-template pTemplate="header">
+                    <img
+                        alt="Card"
+                        src="assets/images/services/transport.jpeg"
+                        class="services-card__images"
+                    />
+                </ng-template>
+                <p class="services-card__description">
+                    Якщо Вам потрібно створити маршрут поїздки скористуйтесь сервісом, що надає
+                    інформацію про всі маршрути та зупинки громадського транспорту 60 міст України,
+                    включаючи Київ, Харків, Донецьк, Луганськ, Болгарії, Узбекистану, Сербії,
+                    Хорватії та Польщі.
+                </p>
+                <ng-template pTemplate="footer">
+                    <p-button
+                        label="Докладніше"
+                        icon="pi pi-search"
+                        (onClick)="openedDialogs.transport = true"
+                    ></p-button>
+                    <a href="https://city.dozor.tech/ua" target="_blank">
+                        <p-button
+                            label="На сайт"
+                            icon="pi pi-arrow-up-right"
+                            styleClass="p-button-secondary"
+                            [style]="{ 'margin-left': '.5em' }"
+                        ></p-button>
+                    </a>
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+</section>
+
+<section class="site-section site-section__grey questions" id="questions">
+    <div class="container">
+        <h3 class="section-header">Популярні питання</h3>
+        <p class="section-subheader">Популярні питання, які задають люди після переселення</p>
+        <span class="site-divider"></span>
+
+        <div class="questions__wrapper site-section__wrapper">
+            <p-panel
+                header="Як знайти якісну компанію-перевізника за кордон?"
+                [toggleable]="true"
+                [collapsed]="false"
+            >
+                <p>
+                    Ви можете здійснити перевірку компанії-автоперевізника за реєстраційним номером
+                    транспортного засобу або ЄДРПОУ чи ІПН суб’єкта господарювання. Завдяки такому
+                    пошуку можна встановити, чи має перевізник чинну ліцензію відповідного типу для
+                    перевезення пасажирів, а також дізнатися назву перевізника, його контакти та
+                    перелік інших транспортних засобів, що є у нього в користуванні.
+                </p>
+
+                <a
+                    href="https://shlyah.dsbt.gov.ua/models/adminui-vue/views/ub-auth.html?returnUrl=https%3A%2F%2Fshlyah.dsbt.gov.ua%2F%23%2F"
+                    target="_blank"
+                >
+                    <button pButton label="Знайти перевізника"></button>
+                </a>
+            </p-panel>
+
+            <p-panel
+                styleClass="questions__panel"
+                header="В якіх країнак кращі кар'єрні перспективи?"
+                [toggleable]="true"
+                [collapsed]="true"
+            >
+                <p>
+                    ТОП 11 країн з чудовими кар'єрними перспективами
+                    <br />
+                    Більшою мірою українці вважають за краще працювати в країнах Європейського
+                    Союзу: Польщі, Чехії, Німеччині, Італії тощо. Це зумовлено переважно тим, що
+                    розташування цих країн досить зручне по відношенню до України, що дозволяє легше
+                    і дешевше діставатися в обидві сторони в будь-який зручний час.
+                    <br />
+                    <br />
+                    Польща Найпопулярнішим напрямком для українських заробітчан є Польща. Вже понад
+                    2 млн наших співвітчизників живуть та працюють там. Мінімальна зарплата у Польщі
+                    на 2022 рік становить близько 600$. Українці, в середньому, мають дохід від 850
+                    до 1200 $ на місяць.
+                    <br />
+                    <br />
+                    Чехія Другою найпопулярнішою країною для роботи серед українців є Чехія. Середня
+                    зарплата, яку можуть отримувати наші громадяни, дещо вища, ніж у Польщі та
+                    становить від 900 до 1300$/місяць. Німеччина У Німеччині прибуток українця може
+                    стартувати від 1500$. Проте, і рівень життя та вартість проживання
+                    обходитимуться дещо дорожче, ніж у тій же Польщі чи Чехії.
+                    <br />
+                    <br />
+                    Угорщина
+                    <br />
+                    Популярний напрямок серед мешканців західної частини України. В середньому,
+                    дохід у цій країні варіюється в районі 1000$, частіше сюди їдуть різнороби.
+                    <br />
+                    <br />
+                    Словаччина Як і Угорщина, Словаччина може надати роботу, оплата якої
+                    дорівнюватиме приблизно 1000$. За вартістю проживання країни майже рівні. Італія
+                    Останнім часом робота тут набирає обертів. Середній дохід наших громадян
+                    становить 1200$.
+
+                    <br />
+                    <br />
+                    В інших країнах світу також багато наших співвітчизників. Ми розглянемо
+                    найпопулярніші напрямки із середньою зарплатою, яку можна там отримувати.
+                    <br />
+                    <br />
+                    Ізраїль (2200-2600$);
+                    <br />
+                    Канада (3000-3200$);
+                    <br />
+                    Британія (1000$);
+                    <br />
+                    США (4000$);
+                    <br />
+                    Китай (5000-7000$).
+                    <br />
+                    <br />
+                    Проте простому українському громадянину простіше знайти роботу в європейських
+                    країнах. Справа в тому, що там для нас надані всі умови для комфортного життя та
+                    роботи. Якщо говорити, де найлегше знайти роботу, то це такі країни, як Польща,
+                    Чехія, Словаччина чи Угорщина.
+                </p>
+            </p-panel>
+
+            <p-panel
+                header="Яка країна лояльніша до українців?"
+                [toggleable]="true"
+                [collapsed]="true"
+            >
+                <p>
+                    Польща — найбільш дружня країна Зараз це притулок для українського бізнесу,
+                    фрілансерів та ФОП. Сюди можна приїхати на особистому автомобілі, автобусі чи
+                    поїзді. Водночас в містах українців завжди готові зустріти волонтери, які
+                    виступають як перекладачі та консультанти. Багато волонтерів допомагають не лише
+                    біженцям, а й сприяють бізнесменам та підприємцям у правильному оформленні
+                    статусу. Для в'їзду у мирний час українцям необхідно було мати закордонний
+                    паспорт і сертифікат про повну вакцинацію. Наразі правила пом'якшилися. Вам
+                    більше не потрібно мати негативного тесту на COVID-19 та проходити обов'язковий
+                    карантин, а також надавати закордонний паспорт. Тепер можна в'їхати до країни за
+                    українськими документами. Для уточнення додаткової інформації завжди доступний
+                    сайт Служби Республіки Польща.
+                </p>
+            </p-panel>
+
+            <p-panel
+                header="У якій країні найлегше знайти роботу українцю?"
+                [toggleable]="true"
+                [collapsed]="true"
+            >
+                <p>
+                    Як повідомляють експерти grc.ua, лідером серед пропозицій роботи для українців
+                    сьогодні стала Польща, яка пропонує 24% усіх актуальних пропозицій. Польща
+                    зацікавлена у залученні українських фахівців, і з цією метою польським урядом
+                    було ухвалено нормативні законодавчі акти, які сприяють спрощенню і прискоренню
+                    процесу працевлаштування іноземних фахівців. У період літнього сезону більше
+                    роботи в Польщі з'явилося у готельно-ресторанній галузі, у сільському
+                    господарстві. Традиційно багато вакансій на підприємствах харчової галузі,
+                    легкої промисловості, у сфері транспорту та логістики, у будівництві.
+                    <br />
+                    <br />
+                    Також активно запрошує українців працювати Вірменія. На кадровому порталі grc.ua
+                    вакансій у цій країні — 11% від усіх актуальних пропозицій за кордоном. Готові
+                    запропонувати роботу українським фахівцям також роботодавці Кіпру, Молдови та
+                    США.
+                    <br />
+                    <br />
+                    ось за даними "OLX Робота", у п'ятірці країн за кількістю відкритих вакансій —
+                    Польща, Німеччина, Ізраїль, Чехія і Нідерланди. "Ще до війни найбільша кількість
+                    пропозицій у категорії "Робота за кордоном" на OLX була в європейських країнах
+                    та Ізраїлі. У липні ця тенденція збереглася. Найбільше оголошень — про роботу в
+                    Польщі. Кількість вакансій там перевищує сумарну кількість публікацій у решті
+                    десяти країнах лідерів за кількістю оголошень, а порівняно з квітнем пропозицій
+                    у 2,5 рази більше. Також багато вакансій в Ізраїлі", — зазначають в "OLX
+                    Робота".
+                </p>
+            </p-panel>
+        </div>
+
+        <a class="questions__download-box" href="/assets/manual.pdf" download>
+            <p-button label="Посібник по всім питанням" icon="pi pi-download"></p-button>
+        </a>
+    </div>
+</section>
+
+<section class="site-section fast-help" id="fast-help">
+    <div class="container">
+        <h3 class="section-header">Необхідна підтримка?</h3>
+        <p class="section-subheader">Отримайте необхідну допомогу в будь-якій точці світу</p>
+        <span class="site-divider"></span>
+
+        <div class="fast-help__wrapper site-section__wrapper">
+            <p-card
+                header="Телефони та ресурси де Вам допоможуть"
+                [style]="{ 'margin-bottom': '2em' }"
+                styleClass="fast-help__content"
+            >
+                <p-tree styleClass="help-tree" [value]="tree" [filter]="true">
+                    <ng-template let-node pTemplate="url">
+                        <a [href]="node.link" [target]="'_blank'" class="help-tree__content">
+                            <span class="material-icons help-tree__icon">{{ node.icon }}</span>
+                            <span>{{ node.label }}</span>
+                            <p-divider type="dashed"></p-divider>
+                            <span>{{ node.linkText }} </span>
+                        </a>
+                    </ng-template>
+                    <ng-template let-node pTemplate="phone">
+                        <a [href]="node.link" [target]="'_self'" class="help-tree__content">
+                            <span class="material-icons help-tree__icon">{{ node.icon }}</span>
+                            <span>{{ node.label }}</span>
+                            <p-divider type="dashed"></p-divider>
+                            <span>{{ node.linkText }} </span>
+                        </a>
+                    </ng-template>
+                </p-tree>
+            </p-card>
+
+            <p-divider layout="vertical" type="dashed"></p-divider>
+
+            <div class="stress-test">
+                <a
+                    target="_blank"
+                    href="https://psytests.org/luscher/fullcolor-run.html"
+                    class="stress-test__content"
+                >
+                    <p class="stress-test__header">Виміряйте рівень стресу</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- <p-carousel
+            [value]="helperSites"
+            styleClass="carousel"
+            [numVisible]="3"
+            [numScroll]="1"
+            [circular]="true"
+            [autoplayInterval]="3000"
+            [responsiveOptions]="caraouselResponsiveOptions"
+        >
+            <ng-template pTemplate="header">
+                <h5>Circular, AutoPlay, 3 Items per Page and Scroll by 1</h5>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+                <div class="item__box">
+                    <div class="item__content">
+                        <div>
+                            <img [src]="item.image" [alt]="item.name" class="item__image" />
+                        </div>
+                        <div>
+                            <h4>{{ item.name }}</h4>
+                            <p>{{ item.label }}</p>
+                            <div class="car-buttons"></div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel> -->
+    </div>
+</section>
+
+<section class="site-section site-section__grey">
+    <div class="container">
+        <h3 class="section-header">Необхідні початкові кроки</h3>
+        <p class="section-subheader">
+            Виконайте ці кроки для швидкої адаптації у новому для Вас місті чи країні
+        </p>
+        <span class="site-divider"></span>
+
+        <div class="main-steps__wrapper site-section__wrapper">
+            <p-timeline [value]="mainSteps" align="alternate" styleClass="customized-timeline">
+                <ng-template pTemplate="marker" let-event>
+                    <span class="custom-marker" [style.backgroundColor]="event.color">
+                        <i [ngClass]="'pi ' + event.icon"></i>
+                    </span>
+                </ng-template>
+                <ng-template pTemplate="content" let-event>
+                    <p-card [header]="event.status" [subheader]="event.subheader">
+                        <img
+                            *ngIf="event.image"
+                            [src]="'assets/showcase/images/demo/product/' + event.image"
+                            [alt]="event.name"
+                            width="200"
+                        />
+                        <p>
+                            {{ event.text }}
+                        </p>
+                        <button
+                            pButton
+                            label="Докладніше"
+                            class="p-button-text"
+                            routerLink="/"
+                            [fragment]="'#services'"
+                        ></button>
+                    </p-card>
+                </ng-template>
+            </p-timeline>
+        </div>
+    </div>
+</section>
+
+<p-dialog
+    header="Гумонітарна допомога"
+    [modal]="true"
+    [draggable]="false"
+    [resizable]="false"
+    [(visible)]="openedDialogs.humanitarianAid"
+    [style.width]="'90vw'"
+    [maximizable]="true"
+    styleClass="partner-site-dialog"
+>
+    <div class="responsive-iframe">
+        <iframe
+            src="https://public.tableau.com/views/dopomoha_auto/Dashboard1?:language=en-GB&:embed=y&:embed_code_version=3&:loadOrderID=0&publish=yes?:embed%3Dy&:display_count=y&:origin=viz_share_link"
+            frameborder="0"
+        ></iframe>
+    </div>
+</p-dialog>
+
+<p-dialog
+    header="Допомога з житлом"
+    [modal]="true"
+    [draggable]="false"
+    [resizable]="false"
+    [(visible)]="openedDialogs.helpWithHouse"
+    [style.width]="'90vw'"
+    [maximizable]="true"
+    styleClass="partner-site-dialog"
+>
+    <div class="responsive-iframe">
+        <iframe src="https://prykhystok.gov.ua/find" frameborder="0"></iframe>
+    </div>
+</p-dialog>
+
+<p-dialog
+    header="Отримати ВПО"
+    [modal]="true"
+    [draggable]="false"
+    [resizable]="false"
+    [(visible)]="openedDialogs.helpWithMoney"
+    [style.width]="'90vw'"
+    [maximizable]="true"
+    styleClass="partner-site-dialog"
+>
+    <div class="responsive-iframe">
+        <iframe src="https://groshi.edopomoga.gov.ua/#status" frameborder="0"></iframe>
+    </div>
+</p-dialog>
+
+<p-dialog
+    header="Транспорт в Україні"
+    [modal]="true"
+    [draggable]="false"
+    [resizable]="false"
+    [(visible)]="openedDialogs.transport"
+    [style.width]="'90vw'"
+    [maximizable]="true"
+    styleClass="partner-site-dialog"
+>
+    <div class="responsive-iframe">
+        <iframe src="https://city.dozor.tech/ua" frameborder="0"></iframe>
+    </div>
+</p-dialog>
+
+<p-dialog
+    header="Психологічна підтримка"
+    [modal]="true"
+    [draggable]="false"
+    [resizable]="false"
+    [(visible)]="openedDialogs.psychologicalHelp"
+    [style.width]="'90vw'"
+    [maximizable]="true"
+    styleClass="partner-site-dialog"
+>
+    <div class="responsive-iframe">
+        <iframe src="https://lifelineukraine.com/" frameborder="0"></iframe>
+    </div>
+</p-dialog>
+
+<app-site-footer></app-site-footer>

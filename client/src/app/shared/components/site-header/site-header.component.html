@@ -1,0 +1,120 @@
+<header class="site-header" [ngClass]="{ 'main-page': isMainPage }">
+    <video
+        *ngIf="isMainPage"
+        id="site-header__video"
+        [autoplay]="true"
+        [loop]="true"
+        [muted]="true"
+        poster="/assets/images/header-bg.png"
+    >
+        <source src="/assets/video/header-bg.MOV" type="video/mp4" />
+    </video>
+    <div class="site-header__head-content">
+        <div class="container">
+            <div class="site-header__wrapper">
+                <img src="/assets/images/logos/small-logo.png" alt="" class="small-logo" routerLink="/" />
+
+                <p-menubar [model]="menuItems"></p-menubar>
+
+                <div class="site-menu__controls">
+                    <div
+                        class="site-menu__user-box"
+                        *ngIf="authService.isLoginedIn; else notLogined"
+                    >
+                        <p-avatar
+                            icon="pi pi-user"
+                            styleClass="mr-2"
+                            size="xlarge"
+                            shape="circle"
+                        ></p-avatar>
+
+                        <span class="user-name">{{ user?.name }}</span>
+                        <span class="material-icons user-menu" (click)="menu.toggle($event)">menu</span>
+                        <p-menu #menu [popup]="true" [model]="userMenuItems"></p-menu>
+                    </div>
+                    <ng-template #notLogined>
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            icon="pi pi-sign-in"
+                            label="Логін"
+                            class="p-button-primary login-button"
+                            [routerLink]="['auth', 'login']"
+                        ></button>
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="Реєстрація"
+                            class="p-button-outlined register-button"
+                            [routerLink]="['auth', 'register']"
+                        ></button>
+                    </ng-template>
+
+                    <label class="theme-switch">
+                        <input
+                            type="checkbox"
+                            id="slider"
+                            [checked]="currentTheme === darkTheme"
+                            (change)="toogleTheme()"
+                        />
+                        <span class="theme-switch__slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isMainPage" class="container site-header__content-container">
+        <div class="site-header__content">
+            <div class="site-header__headings">
+                <h1 class="header-text">Мы разом - Мы переможемо</h1>
+
+                <p class="subheader-text">
+                    Цей сайт допомагає українцям, які змушені були переїхати внаслідок
+                    повномасштабного вторгнення
+                    <span [style.color]="'#ff0000'">російської федерації</span>.
+                </p>
+
+                <div class="site-header__content-controls">
+                    <a href="#services">
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            icon="pi pi-check"
+                            label="Отримати допомогу"
+                            class="p-button-primary p-button-raised content__first-button"
+                        ></button>
+                    </a>
+
+                    <a href="#fast-help">
+                        <button
+                            pButton
+                            pRipple
+                            type="button"
+                            label="Корисні ресурси"
+                            [ngStyle]="{ background: '#ffffff' }"
+                            class="p-button-raised p-button-text"
+                        ></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="site-header__content-logo">
+                <img src="/assets/images/logos/mini-logo-white.png" alt="" />
+            </div>
+        </div>
+
+        <a href="#services">
+            <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-chevron-down"
+                class="p-button-rounded p-button-warning site-header__arrow-down"
+            ></button>
+        </a>
+    </div>
+</header>

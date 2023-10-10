@@ -1,0 +1,33 @@
+@import 'variables.scss';
+
+.site-footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-button {
+    margin-right: 0.5rem;
+}
+
+@media screen and (max-width: $smallTabletBreakPoint) {
+    .site-footer__wrapper {
+        padding: 5px;
+    }
+
+    .site-menu__controls {
+        display: flex;
+        align-items: flex-end;
+        gap: 5px;
+        flex-direction: column;
+
+        .p-button,
+        .p-component {
+            font-size: 1rem;
+        }
+    }
+
+    .small-logo {
+        max-width: 180px;
+    }
+}

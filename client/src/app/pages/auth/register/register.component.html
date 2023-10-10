@@ -1,0 +1,51 @@
+<form [formGroup]="registerForm" class="register">
+    <span class="field p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="email" pInputText required placeholder="Ім'я" formControlName="name" />
+    </span>
+
+    <span class="field p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="email" pInputText placeholder="Призвище" formControlName="surname" />
+    </span>
+
+    <span class="field p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="email" pInputText required placeholder="Email" formControlName="email" />
+    </span>
+
+    <span class="field p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <p-password
+            required
+            autocomplete="off"
+            appendTo="body"
+            styleClass="p-password"
+            [placeholder]="'Пароль'"
+            [feedback]="false"
+            [toggleMask]="true"
+            formControlName="password"
+        ></p-password>
+    </span>
+
+    <span class="field p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <p-password
+            required
+            formControlName="passwordConfirm"
+            autocomplete="off"
+            appendTo="body"
+            styleClass="p-password"
+            [placeholder]="'Повторіть пароль'"
+            [feedback]="false"
+            [toggleMask]="true"
+        ></p-password>
+    </span>
+
+    <p-button
+        label="Зареєструватися"
+        class="form-button"
+        icon="pi pi-search"
+        (onClick)="register()"
+    ></p-button>
+</form>

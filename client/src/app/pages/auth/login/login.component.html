@@ -1,0 +1,32 @@
+<form [formGroup]="loginForm" class="login">
+    <span class="field p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="email" pInputText required placeholder="Email" formControlName="email" />
+    </span>
+
+    <span class="field p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <p-password
+            autocomplete="off"
+            appendTo="body"
+            required
+            styleClass="p-password"
+            [placeholder]="'Пароль'"
+            [feedback]="false"
+            [toggleMask]="true"
+            formControlName="password"
+        ></p-password>
+    </span>
+
+    <span class="field">
+        <p-checkbox
+            name="groupname"
+            label="Запам'ятати мене"
+            [value]="false"
+            [binary]="true"
+            formControlName="saveToken"
+        ></p-checkbox>
+    </span>
+
+    <p-button class="form-button" label="Увійти" icon="pi pi-search" (onClick)="login()"></p-button>
+</form>

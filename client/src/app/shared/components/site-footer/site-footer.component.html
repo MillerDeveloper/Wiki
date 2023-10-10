@@ -1,0 +1,31 @@
+<footer class="site-footer">
+    <div class="site-footer__head-content">
+        <div class="container">
+            <div class="site-footer__wrapper">
+                <img src="/assets/images/logos/small-logo.png" alt="" class="small-logo" />
+
+                <p-menubar [model]="menuItems"></p-menubar>
+
+                <div class="site-menu__controls">
+                    <button
+                        pButton
+                        pRipple
+                        type="button"
+                        icon="pi pi-check"
+                        label="Логін"
+                        class="p-button-primary login-button"
+                        [routerLink]="['auth', 'login']"
+                    ></button>
+                    <button
+                        pButton
+                        pRipple
+                        type="button"
+                        label="Реєстрація"
+                        class="p-button-outlined register-button"
+                        [routerLink]="['auth', 'register']"
+                    ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

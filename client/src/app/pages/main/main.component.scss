@@ -1,0 +1,194 @@
+@import 'variables.scss';
+
+.services-wrapper {
+    margin-top: 50px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    p-card {
+        max-width: 360px;
+        margin: 20px 15px 10px 15px;
+
+        ::ng-deep {
+            .p-card-title {
+                font-size: 2.5rem;
+            }
+
+            .p-card-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.services-card__images {
+    margin: 0 auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: block;
+    height: 200px;
+}
+
+.services-card__description {
+    font-size: 1.4rem;
+}
+
+.questions__wrapper {
+    ::ng-deep {
+        .p-panel {
+            margin-bottom: 8px;
+        }
+
+        .p-panel-header {
+            border-radius: 4px;
+            font-size: 1.6rem;
+            padding: 1.4rem 1.25rem;
+        }
+    }
+}
+
+.questions__download-box {
+    ::ng-deep .p-button {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.fast-help__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p-card {
+        flex: 2;
+    }
+
+    ::ng-deep {
+        p-divider {
+            align-self: stretch;
+        }
+    }
+}
+
+.stress-test {
+    background: url('/assets/images/stress-test.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.stress-test__content {
+    background: rgba($theme-color, 0.7);
+    backdrop-filter: blur(2px);
+    height: auto;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed $primary-text-color;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.stress-test__header {
+    font-size: 2.4rem;
+    text-align: center;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+:host ::ng-deep {
+    .help-tree {
+        .p-treenode-label {
+            width: 100%;
+        }
+    }
+}
+
+.help-tree__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p-divider {
+        margin: 0 5px;
+        width: 100%;
+    }
+}
+
+.help-tree__icon {
+    margin-right: 10px;
+}
+
+.custom-marker {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+::ng-deep {
+    .p-timeline-event-content,
+    .p-timeline-event-opposite {
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    ::ng-deep {
+        .customized-timeline {
+            .p-timeline-event:nth-child(even) {
+                flex-direction: row !important;
+
+                .p-timeline-event-content {
+                    text-align: left !important;
+                }
+            }
+
+            .p-timeline-event-opposite {
+                flex: 0;
+            }
+
+            .p-card {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+.carousel {
+    ::ng-deep {
+        .item__image {
+            width: 500px;
+        }
+    }
+}
+
+@media screen and (max-width: $smallTabletBreakPoint) {
+    .services-wrapper {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: $smallTabletBreakPoint) {
+    .fast-help__wrapper {
+        flex-direction: column;
+
+        p-divider {
+          display: none;
+        }
+    }
+}
+
+// .fast-help__wrapper[_ngcontent-bns-c38]
